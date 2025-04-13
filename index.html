@@ -1,11 +1,11 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>你就是連署超人！</title>
-  <meta name="description" content="感謝你邀請朋友寫了這麼多連署書！你的行動為民主貢獻了重要的一步！">
   <style>
     html, body {
       margin: 0;
@@ -29,15 +29,12 @@
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
       text-align: center;
       z-index: 1;
-      
       opacity: 0;
       animation: stickerFlip 1.6s ease-out forwards;
-      filter: blur(6px);
-    
       transform-origin: center;
+      filter: blur(6px);
     }
 
-    
     @keyframes stickerFlip {
       0% {
         opacity: 0;
@@ -51,15 +48,6 @@
         opacity: 1;
         transform: scale(1) rotate(0deg);
         filter: blur(0);
-      }
-    
-      0% {
-        opacity: 0;
-        transform: scale(0.8) rotate(360deg);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
       }
     }
 
@@ -109,17 +97,20 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background: linear-gradient(to right, #f67280, #ffb6b9);
-      color: white;
       transition: transform 0.2s ease;
+      color: white;
+    }
+
+    .action-buttons button.celebrate {
+      background: linear-gradient(to right, #f67280, #ffb6b9);
+    }
+
+    .action-buttons button.more-info {
+      background: linear-gradient(to right, #a8bfcf, #d3dee7);
     }
 
     .action-buttons button:active {
       transform: scale(0.95);
-    }
-
-    .action-buttons .more-info {
-      background: linear-gradient(to right, #9eb8c9, #a9c0cf);
     }
 
     .star {
@@ -161,13 +152,14 @@
 </div>
 
 <div class="action-buttons">
-  <button onclick="launchConfettiAndSound()">慶祝一下🎉</button>
+  <button class="celebrate" onclick="launchConfetti()">慶祝一下🎉</button>
   <button class="more-info" onclick="window.open('https://www.twacda.com/', '_blank')">更多連署資訊</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-  function launchConfettiAndSound() {    confetti({
+  function launchConfetti() {
+    confetti({
       particleCount: 150,
       spread: 100,
       origin: { y: 0.6 }
